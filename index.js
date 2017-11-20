@@ -13,7 +13,7 @@ exports.releaseTasks = functions.https.onRequest((req, res) => {
     res.status(200).send(JSON.stringify(snapshot.val()));
         snapshot.forEach(function(child) {
             if(child.val().inProgressSince < cut_off){
-                child.ref.update({ inProgress: "NO", userID: 0 });
+                child.ref.update({ inProgress: "NO", userID: "0" });
             }
         })
     });
